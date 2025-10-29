@@ -1,11 +1,8 @@
 #include <stdio.h>
 int main() {
-    int choice;
-    float a, b;
-    printf("Nhap so thu nhat: ");
-    scanf("%f", &a);
-    printf("Nhap so thu hai: ");
-    scanf("%f", &b);
+    float a, b; int c;
+    printf("=== CHUONG TRINH TINH TOAN DON GIAN ===\n");
+    printf("Nhap 2 so: "); scanf("%f%f", &a, &b);
     do {
         printf("\n===== MENU =====\n");
         printf("1. Tong 2 so\n");
@@ -14,29 +11,13 @@ int main() {
         printf("4. Thuong 2 so\n");
         printf("5. Thoat\n");
         printf("Lua chon cua ban: ");
-        scanf("%d", &choice);
-        switch (choice) {
-            case 1:
-                printf("Tong = %.2f\n", a + b);
-                break;
-            case 2:
-                printf("Hieu = %.2f\n", a - b);
-                break;
-            case 3:
-                printf("Tich = %.2f\n", a * b);
-                break;
-            case 4:
-                if (b != 0)
-                    printf("Thuong = %.2f\n", a / b);
-                else
-                    printf("Loi: Khong the chia cho 0\n");
-                break;
-            case 5:
-                printf("Dang thoat chuong trinh...\n");
-                break;
-            default:
-                printf("Lua chon khong hop le! Vui long nhap lai.\n");
-        }
-    } while (choice != 5);
+        scanf("%d", &c);
+        if (c==1) printf("Tong = %.2f\n", a+b);
+        else if (c==2) printf("Hieu = %.2f\n", a-b);
+        else if (c==3) printf("Tich = %.2f\n", a*b);
+        else if (c==4) b!=0 ? printf("Thuong = %.2f\n", a/b) : printf("Loi: Khong chia cho 0!\n");
+        else if (c==5) printf("Cam on da su dung chuong trinh!\n");
+        else printf("Lua chon khong hop le, vui long nhap lai!\n");
+    } while (c!=5);
     return 0;
 }
